@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), MainGridAdapter.OnGridItemListener {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        gridModelList.add(GridModel("Gallery", R.drawable.ic_android_black_24dp))
+        gridModelList.add(GridModel("Gallery", R.drawable.ic_photo_library_black_24dp))
         for (i in 1..6) {
             gridModelList.add(GridModel("Title $i", R.drawable.ic_android_black_24dp))
         }
