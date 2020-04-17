@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,8 +13,11 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_config"
         android:theme="@style/AppTheme">
-        <activity android:name=".gallery.ShowImageActivity"></activity>
+        <activity android:name=".restapi.HomeActivity" />
+        <activity android:name=".restapi.LoginActivity" />
+        <activity android:name=".gallery.ShowImageActivity" />
         <activity android:name=".gallery.ImagesActivity" />
         <activity android:name=".gallery.GalleryActivity" />
         <activity android:name=".MainActivity">

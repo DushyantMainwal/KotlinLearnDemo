@@ -1,6 +1,8 @@
 package com.example.kotlindemo
 
+import android.content.Context
 import android.graphics.Bitmap
+import android.widget.Toast
 
 object CustomData {
 
@@ -22,5 +24,9 @@ object CustomData {
             width = (height * bitmapRatio).toInt()
         }
         return Bitmap.createScaledBitmap(image, width, height, true)
+    }
+
+    fun printToast(context: Context, msg: String) {
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }
 }

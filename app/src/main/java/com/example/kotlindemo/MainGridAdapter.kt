@@ -18,11 +18,11 @@ class MainGridAdapter(
     var itemListener: OnGridItemListener = gridItemListener
 
     override fun getCount(): Int {
-        return gridModelList.size ?: 0
+        return gridModelList.size
     }
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        var convertView = convertView
+    override fun getView(position: Int, convertViewOrg: View?, parent: ViewGroup): View {
+        var convertView = convertViewOrg
         val itemHolder: ItemViewHolder
 
         if (convertView == null) {
