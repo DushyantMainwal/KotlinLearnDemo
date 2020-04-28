@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.kotlindemo.gallery.GalleryActivity
+import com.example.kotlindemo.mvvm_webview.GithubListActivity
 import com.example.kotlindemo.restapi.LoginActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -36,7 +37,9 @@ class MainActivity : AppCompatActivity(), MainGridAdapter.OnGridItemListener {
 
         gridModelList.add(GridModel("Gallery", R.drawable.ic_photo_library_black_24dp))
         gridModelList.add(GridModel("Retrofit Basic", R.drawable.ic_data_usage_black_24dp))
-        for (i in 1..6) {
+        gridModelList.add(GridModel("MVVM Github List", R.drawable.ic_web_black_24dp))
+
+        for (i in 1..4) {
             gridModelList.add(GridModel("Title $i", R.drawable.ic_android_black_24dp))
         }
 
@@ -87,6 +90,7 @@ class MainActivity : AppCompatActivity(), MainGridAdapter.OnGridItemListener {
         when (position) {
             0 -> startActivity(Intent(this@MainActivity, GalleryActivity::class.java))
             1 -> startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+            2 -> startActivity(Intent(this@MainActivity, GithubListActivity::class.java))
         }
     }
 }
