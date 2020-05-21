@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="sleepTrackerViewModel"
+            type="com.example.kotlindemo.room_coroutines.viewmodel.SleepTrackerViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".room_coroutines.ui.ScheduleSleepFragment">
+
+        <Button
+            android:id="@+id/start_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/colorAccent"
+            android:text="Start"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:enabled="@{sleepTrackerViewModel.startButtonVisible}"
+            android:onClick="@{()->sleepTrackerViewModel.onStartTracking()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/stop_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@color/colorAccent"
+            android:text="Stop"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:enabled="@{sleepTrackerViewModel.stopButtonVisible}"
+            android:onClick="@{()->sleepTrackerViewModel.onStopTracking()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/clear_btn"
+            app:layout_constraintTop_toBottomOf="@+id/start_btn"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:id="@+id/sleep_schedule_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{sleepTrackerViewModel.nightsString}" />
+        </ScrollView>
+
+        <Button
+            android:id="@+id/clear_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/colorAccent"
+            android:text="Clear"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:enabled="@{sleepTrackerViewModel.clearButtonVisible}"
+            android:onClick="@{()->sleepTrackerViewModel.onClearData()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
