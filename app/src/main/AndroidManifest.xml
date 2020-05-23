@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".room_coroutines.SleepActivity"/>
+        <activity android:name=".canvas_sign_pad.CanvasPadActivity"></activity>
+        <activity android:name=".room_coroutines.SleepActivity" />
         <activity android:name=".mvvm_webview.GithubListActivity" />
         <activity android:name=".restapi.HomeActivity" />
         <activity android:name=".restapi.LoginActivity" />

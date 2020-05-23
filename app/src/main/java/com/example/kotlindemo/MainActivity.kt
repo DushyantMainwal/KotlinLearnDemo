@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.kotlindemo.canvas_sign_pad.CanvasPadActivity
 import com.example.kotlindemo.gallery.GalleryActivity
 import com.example.kotlindemo.mvvm_webview.GithubListActivity
 import com.example.kotlindemo.restapi.LoginActivity
@@ -39,7 +40,8 @@ class MainActivity : AppCompatActivity(), MainGridAdapter.OnGridItemListener {
         gridModelList.add(GridModel("Gallery", R.drawable.ic_photo_library_black_24dp))
         gridModelList.add(GridModel("Retrofit Basic", R.drawable.ic_data_usage_black_24dp))
         gridModelList.add(GridModel("MVVM Github List", R.drawable.ic_web_black_24dp))
-        gridModelList.add(GridModel("Room Schedule", R.drawable.ic_access_alarm_black_24dp))
+        gridModelList.add(GridModel("Room Basic", R.drawable.ic_access_alarm_black_24dp))
+        gridModelList.add(GridModel("Canvas Sign Pad", R.drawable.ic_assignment_black_24dp))
 
         for (i in 1..4) {
             gridModelList.add(GridModel("Title $i", R.drawable.ic_android_black_24dp))
@@ -94,6 +96,7 @@ class MainActivity : AppCompatActivity(), MainGridAdapter.OnGridItemListener {
             1 -> startActivity(Intent(this@MainActivity, LoginActivity::class.java))
             2 -> startActivity(Intent(this@MainActivity, GithubListActivity::class.java))
             3 -> startActivity(Intent(this@MainActivity, SleepActivity::class.java))
+            4 -> startActivity(Intent(this@MainActivity, CanvasPadActivity::class.java))
         }
     }
 }
